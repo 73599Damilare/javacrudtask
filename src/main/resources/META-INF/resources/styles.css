@@ -1,0 +1,32 @@
+html {
+    --lumo-base-color: #000000;
+    --lumo-primary-color: #4f8cff;
+    --lumo-primary-text-color: #6fa0ff;
+    --lumo-primary-color-50pct: rgba(79, 140, 255, 0.5);
+    --lumo-primary-color-10pct: rgba(79, 140, 255, 0.1);
+}
+
+body {
+    background-color: #000000;
+}
+
+.main-view {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.main-view h1 {
+    margin: var(--lumo-space-m) 0 0;
+    font-size: var(--lumo-font-size-xxl);
+}
+
+.customer-grid {
+    border-radius: var(--lumo-border-radius-l);
+}
+
+.customer-editor {
+    background-color: #111111;
+    border: 1px solid #2a2a2a;
+    border-radius: var(--lumo-border-radius-l);
+    padding: var(--lumo-space-l);
+}

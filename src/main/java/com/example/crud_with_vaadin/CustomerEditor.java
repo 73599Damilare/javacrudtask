@@ -39,6 +39,7 @@ public class CustomerEditor extends VerticalLayout implements KeyNotifier {
         binder.bindInstanceFields(this);
 
         setSpacing(true);
+        addClassName("customer-editor");
 
         save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         delete.addThemeVariants(ButtonVariant.LUMO_ERROR);

@@ -1,7 +1,10 @@
 package com.example.crud_with_vaadin;
 
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.grid.GridVariant;
+import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -27,11 +30,18 @@ public class MainView extends VerticalLayout {
         this.addNewBtn = new Button("New customer", VaadinIcon.PLUS.create());
 
         HorizontalLayout actions = new HorizontalLayout(filter, addNewBtn);
-        add(actions, grid, editor);
+        add(new H1("Customer Manager"), actions, grid, editor);
+        addClassName("main-view");
 
+        addNewBtn.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+
+        grid.addClassName("customer-grid");
+        grid.addThemeVariants(GridVariant.LUMO_ROW_STRIPES);
         grid.setHeight("300px");
         grid.setColumns("id", "firstName", "lastName");
-        grid.getColumnByKey("id").setWidth("50px").setFlexGrow(0);
+        grid.getColumnByKey("id").setHeader("ID").setWidth("70px").setFlexGrow(0);
+        grid.getColumnByKey("firstName").setHeader("First Name");
+        grid.getColumnByKey("lastName").setHeader("Last Name");
 
         filter.setPlaceholder("Filter by last name");
         filter.setValueChangeMode(ValueChangeMode.LAZY);
